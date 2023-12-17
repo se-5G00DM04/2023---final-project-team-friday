@@ -10,8 +10,8 @@ This project consists of a backend Express server and a frontend React UI.
 
 ### Server Address and Endpoints
 
-- Backend Server: [Specify server address]
-- Frontend Server: [Specify server address]
+- Backend Server: 4000 
+- Frontend Server: 8000
 - API Endpoints: [List of endpoints]
 
 ### Team Members
