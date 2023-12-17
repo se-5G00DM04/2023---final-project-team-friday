@@ -26,4 +26,27 @@ router.get('/:id', (req, res) => {
 });
 
 
+// POST /api/items route for adding a new item, accept the POST req from frontend with provided data,
+// ad a id to it and add it to items array and then send the resposnse
+router.post('/', (req, res) => {
+  const newItem = {
+    id: ITEMS.length + 1, // Assign a unique ID (incrementing integer)
+    itemName: req.body.itemName,
+    quantity: req.body.quantity,
+    isSelected: req.body.isSelected,
+  };
+
+  ITEMS.push(newItem);
+  res.status(201).json(newItem); // 201 Created for successful creation
+});
+
+//   // POST /api/items - Add a new item
+// router.post('/', (req, res) => {
+//     const newItem = req.body;
+//     ITEMS.push(newItem);
+//     res.json(newItem);
+//   });
+
+
+
 module.exports = router;
