@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Total from './Total';
 import AddItem from './AddItem';
