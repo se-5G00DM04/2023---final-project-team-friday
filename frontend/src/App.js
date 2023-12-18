@@ -10,9 +10,30 @@ function App() {
 	const [inputValue, setInputValue] = useState('');
 	const [totalItemCount, setTotalItemCount] = useState(6);
 
+	useEffect(() => {
+		// Fetch data from the backend when the component mounts
+		fetchItems();
+	  }, []);
+
+	  // -------------fetchItems function sends a GET request to the /api/items endpoint------------------
+	  const fetchItems = async () => {
+		console.log("fethching items....");
+		  try {
+			const response = await fetch('http://localhost:5003/api/items'); // fetch API to GET all items from backend server endpoint
+			if(!response.ok){
+			  throw new Error("No Items found");
+			}
+			const data = await response.json();//convert to JSON . json() return a promise
+  
+			setItems(data);// set the items variable with received data
+			//calculateTotal(data);
+		  } catch (error) {
+			console.error('Error fetching items:', error);
+		  }
+		};
+
 	//--------------------handleAddButtonClick(Add a new item)---------------------------
 	const handleAddButtonClick = async () => {
-		console.log('Button clicked');
 		try {
 		  // Using the Fetch API to send a POST request to the '/api/items' endpoint of the server
 		  const response = await fetch('http://localhost:5003/api/items', {
@@ -29,7 +50,7 @@ function App() {
 		  // Checking if the response status is OK (status code 200-299)
 		  if (response.ok) {
 			// If the item was successfully added, fetch the updated items
-			// fetchItems();
+			fetchItems();  // fetching the items from backend again including the new one
 			setInputValue('');  // Resetting the input value to an empty string
 		  } else {
 			// If the response status is not OK, log an error message
