@@ -1,16 +1,15 @@
 services:
   frontend:
-    build:
-      context: ./frontend  # Adjust this path to your actual frontend directory
-    image: frontendfinal_shopping_image
+    image: ${FRONTEND_IMAGE}
     ports:
       - "8000:3000"
+    env_file:
+      - .env
     restart: always
-
   backend:
-    build:
-      context: ./backend  # Adjust this path to your actual backend directory
-    image: backendfinal_shopping_image
+    image: ${BACKEND_IMAGE}
     ports:
       - "4000:5000"
+    env_file:
+      - .env
     restart: always
