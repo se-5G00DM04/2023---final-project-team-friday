@@ -7,6 +7,7 @@ require('dotenv').config();
 
 const middlewares = require('./middlewares');
 const api = require('./api');
+const itemRouter = require('./api/items'); 
 
 const app = express();
 
@@ -21,7 +22,8 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use('/api/v1', api);
+app.use('/api/v1', api); // it uses the 'api' module(directory) for routing under the '/api/v1' path
+app.use('/api/items',itemRouter);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
