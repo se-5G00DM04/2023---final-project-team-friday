@@ -6,12 +6,12 @@ get http://localhost:5000/
 get http://localhost:5000/api/items
 ###
 
-get http://localhost:5003/api/items/3
+get http://localhost:5000/api/items/3
 
 ###
 
 //-------POST method for items--------------
-POST http://localhost:5003/api/items
+POST http://localhost:5000/api/items
 content-type: application/json
 
 { 
@@ -21,5 +21,5 @@ content-type: application/json
 }
 ###
 //-------DELETE method for items by id--------------
-DELETE http://localhost:5003/api/items/3
+DELETE http://localhost:5000/api/items/3
 ###
