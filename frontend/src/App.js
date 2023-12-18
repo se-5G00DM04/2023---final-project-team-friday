@@ -19,7 +19,7 @@ function App() {
 	  const fetchItems = async () => {
 		console.log("fethching items....");
 		  try {
-			const response = await fetch('http://localhost:5003/api/items'); // fetch API to GET all items from backend server endpoint
+			const response = await fetch('http://localhost:5000/api/items'); // fetch API to GET all items from backend server endpoint
 			if(!response.ok){
 			  throw new Error("No Items found");
 			}
@@ -36,7 +36,7 @@ function App() {
 	const handleAddButtonClick = async () => {
 		try {
 		  // Using the Fetch API to send a POST request to the '/api/items' endpoint of the server
-		  const response = await fetch('http://localhost:5003/api/items', {
+		  const response = await fetch('http://localhost:5000/api/items', {
 			method: 'POST',  
 			headers: {
 			  'Content-Type': 'application/json',  // Setting the content type to JSON
@@ -103,8 +103,8 @@ const deleteItem = async (id, index) => {
 		alert("To delete an Item, Check the Item as completed first");
 	  } else {
 		// Send a DELETE request to the backend API to delete the item with the specified ID
-		// It doesn't explicitly fetch the item before sending the delete request. The assumption is that the backend API endpoint (http://localhost:5003/api/items/${id}) is designed to handle the deletion based on the provided ID.
-		const response = await fetch(`http://localhost:5003/api/items/${id}`, {
+		// It doesn't explicitly fetch the item before sending the delete request. The assumption is that the backend API endpoint (http://localhost:5000/api/items/${id}) is designed to handle the deletion based on the provided ID.
+		const response = await fetch(`http://localhost:5000/api/items/${id}`, {
 		  method: 'DELETE',
 		});
   
