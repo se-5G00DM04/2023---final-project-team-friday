@@ -87,5 +87,6 @@ This project consists of a backend Express server and a frontend React UI.
 **Different version realesed**
 **2 pipeline, one for branch verification and one for main**
 **local backend can be accessed by using .rest file**
+**Used Githubflow branching Strategy. Used two feature branches for frontend and backend**
 
 
