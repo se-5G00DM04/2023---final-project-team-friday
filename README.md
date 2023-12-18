@@ -9,20 +9,18 @@
 This project consists of a backend Express server and a frontend React UI.
 
 ### Server Address and Endpoints
-- Backend Server: 4000 
-- Frontend Server: 8000
+**Production Server ip: 172.16.7.187**
+- Backend Server port: 4000 
+- Frontend Server port: 8000
+
 
 ### API Endpoints
 - **Get All Items:**
   - **Endpoint:** `GET /api/items`
-  - **Example:** http://localhost:4000/api/items
-
 - **Get Item by ID:**
   - **Endpoint:** `GET /api/items/:id`
-
 - **Add a New Item:**
   - **Endpoint:** `POST /api/items`
-
 - **Delete Item by ID:**
   - **Endpoint:** `DELETE /api/items/:id`
 
@@ -35,10 +33,16 @@ This project consists of a backend Express server and a frontend React UI.
 4. Run the backend server: `npm run dev`
 5. Open a new terminal window and navigate to the frontend folder: `cd ../frontend`
 6. Install frontend dependencies: `npm install`
-7. Run the frontend UI: `npm start`
+7. Run the frontend: `npm run start`
+
+#### To see backend locally
+**http://localhost:5000/api/items**
+
+#### To see Frontend app locally
+**http://localhost:3000**
+
 
 ### Instructions for Running Docker Containers Locally
-
 1. **Build Docker Images:**
    - Navigate to the backend folder:
      cd backend
@@ -58,22 +62,31 @@ This project consists of a backend Express server and a frontend React UI.
    - Start the frontend Docker container:
      docker run -p 8000:3000 -d frontend-image
 
-Now you should be able to access your project at:
+#### Now access project from Docker containers at:
 - Backend: http://localhost:4000
 - Frontend: http://localhost:8000
 
 ### Completed Phases
 
-- Phase 1
-- Phase 2
-- Phase 3
-- Phase 4
-- Phase 5
+- Phase 1(done)
+- Phase 2(done)
+- Phase 3(done)
+- Phase 4(done)
+- Phase 5(backend 6 testcases)
 
 
 ### Project Grade
 
-Expected Grade: ....
-Reasoning: .................
+**Expected Grade: 5**
+
+**Reasoning:**
+**All phases done**
+**Intensive Team collaboration 10+ pull request and 10+issues**
+**GET,POST and DELETE methods implemented**
+**Shoppinglist item can be added,deleted and also delete is conditional until checkbox is ticked**
+**Different version realesed**
+**2 pipeline, one for branch verification and one for main**
+**local backend can be accessed by using .rest file**
+**Used Githubflow branching Strategy. Used two feature branches for frontend and backend**
 
 
