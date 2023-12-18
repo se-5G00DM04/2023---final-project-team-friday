@@ -72,7 +72,35 @@ function App() {
 	};
 
 
-
+// --------------------deleteItem ---------------------------
+const deleteItem = async (id, index) => {
+	try {
+	  const newItems = [...items];
+	  // Check if the item is selected before deleting
+	  if (!newItems[index].isSelected) {
+		// Handle the case where the item is not selected 
+		alert("To delete an Item, Check the Item as completed first");
+	  } else {
+		// Send a DELETE request to the backend API to delete the item with the specified ID
+		// It doesn't explicitly fetch the item before sending the delete request. The assumption is that the backend API endpoint (http://localhost:5003/api/items/${id}) is designed to handle the deletion based on the provided ID.
+		const response = await fetch(`http://localhost:5003/api/items/${id}`, {
+		  method: 'DELETE',
+		});
+  
+		if (response.ok) {
+		  newItems.splice(index, 1); // Remove the item at the specified index
+		  setItems(newItems);
+		  calculateTotal(newItems);
+		} else {
+		  // Handle the case where the deletion was not successful
+		  console.error('Failed to delete item:', response.statusText);
+		}
+	  }
+	} catch (error) {
+	  // Handle network or other errors
+	  console.error('Error deleting item:', error);
+	}
+  };
   
   
 //--------------------calculateTotal---------------------------
