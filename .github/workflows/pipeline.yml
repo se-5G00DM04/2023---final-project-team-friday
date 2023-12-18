@@ -6,7 +6,7 @@ on:
   # Triggers the workflow on push events but only for the "main" branch
   push:
     #branches: ["main"]
-    branches: ["backend-functionalities"]
+    branches: ["main"]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 env:
@@ -145,7 +145,7 @@ jobs:
           cp docker-compose.yml prod_stack/docker-compose.yml
           echo "BACKEND_IMAGE=${{ env.REGISTRY }}/${{ env.BACKEND_IMAGE_NAME }}" >> prod_stack/.env
           echo "FRONTEND_IMAGE=${{ env.REGISTRY }}/${{ env.FRONTEND_IMAGE_NAME }}" >> prod_stack/.env
-          rsync -r dev_stack "${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_SERVER }}:./"
+          rsync -r prod_stack "${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_SERVER }}:./"
       
 # SSH into VM server and bring up the stack
       - name: Start containers via SSH
