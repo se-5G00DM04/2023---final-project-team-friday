@@ -48,5 +48,17 @@ router.post('/', (req, res) => {
 //   });
 
 
+// DELETE route for deleting an item by ID
+router.delete('/:id', (req, res) => {
+  const itemId = parseInt(req.params.id);
+  const index = ITEMS.findIndex((item) => item.id === itemId);//find the index of the item which match the id
+
+  if (index !== -1) {
+      ITEMS.splice(index, 1);
+      res.status(200).json({ message: 'Item deleted successfully' });
+  } else {
+    res.status(404).json({ message: 'Item not found' });
+  }
+});
 
 module.exports = router;
