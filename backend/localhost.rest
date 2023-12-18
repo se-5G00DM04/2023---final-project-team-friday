@@ -1,0 +1,25 @@
+//-------POST method for items--------------
+
+get http://localhost:5000/
+###
+
+get http://localhost:5000/api/items
+###
+
+get http://localhost:5000/api/items/3
+
+###
+
+//-------POST method for items--------------
+POST http://localhost:5000/api/items
+content-type: application/json
+
+{ 
+    "itemName": "item 77",
+    "quantity": 1 ,
+    "isSelected": false
+}
+###
+//-------DELETE method for items by id--------------
+DELETE http://localhost:5000/api/items/3
+###
