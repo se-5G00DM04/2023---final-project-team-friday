@@ -8,14 +8,15 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "cross-env": "^7.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "cross-env REACT_APP_BACKEND=http://localhost:5000/api react-scripts start",
+    "build": "cross-env REACT_APP_BACKEND=http://172.16.7.187:4000/api react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
