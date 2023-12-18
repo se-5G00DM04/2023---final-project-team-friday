@@ -107,7 +107,7 @@ const deleteItem = async (id, index) => {
 		// Send a DELETE request to the backend API to delete the item with the specified ID
 		// It doesn't explicitly fetch the item before sending the delete request. The assumption is that the backend API endpoint (http://localhost:5000/api/items/${id}) is designed to handle the deletion based on the provided ID.
 		//const response = await fetch(`http://localhost:4000/api/items/${id}`, {
-		const response = await fetch(`${process.env.REACT_APP_BACKEND}/items`,{
+		const response = await fetch(`${process.env.REACT_APP_BACKEND}/items/${id}`,{
 		  method: 'DELETE',
 		});
   
